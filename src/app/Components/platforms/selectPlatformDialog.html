@@ -1,0 +1,41 @@
+<div style="background-color: rgb(255, 255, 255)">
+    <div style="background:rgb(255, 255, 255);text-align: center;margin-top: -24px;margin-bottom: -24px;">
+        <h2 mat-dialog-title style="padding-top: 10px; padding-bottom: 10px; font-size:14px; font-weight: bold; color: #008FCE;">Platform</h2>
+    </div>
+
+    <mat-divider style="margin-left: -24px; margin-right: -24px; background: #D8D8D8"></mat-divider>
+
+    <mat-dialog-content>
+        <mat-list>
+            <mat-list-item *ngFor="let platform of dummyPlatformArray; let i=index" (click)="getSelecetedPlatform(i)">
+                <div class="col" style="display: contents;">
+                    <div class="col" style="text-align: left; margin-left: -15px; margin-top: -8px">
+                        {{platform.name}}
+                        <img style="float: right; margin-right: -40px; margin-top: 5px" [hidden]="!platform.isSelected" [src]="platformSelectedIcon">
+                    </div>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </mat-dialog-content>
+
+    <mat-divider style="margin-left: -24px; margin-right: -24px; background: #D8D8D8"></mat-divider>
+
+    <mat-dialog-actions>
+        <mat-toolbar style="background: rgb(255, 255, 255); padding: 0px; height: 36px;">
+            <div class="row" style="display: contents;">
+                <div class="col" style="text-align: center;">
+                    <label style="font-size: 14px; cursor: pointer; color:rgb(0, 143, 206); margin-top: 8.5px;" (click)=dialogCancel()>Cancel</label>
+                </div>
+
+                <div class="col-1" style="background:rgb(255, 255, 255); text-align: -webkit-center;">
+                    <div style="background: #D8D8D8; width: 1px; height: 52px">
+                    </div>
+                </div>
+
+                <div class="col" style="text-align: center;">
+                    <label style="color: #008FCE;cursor: pointer; font-size: 14px;margin-top: 8.5px;font-weight: bold;" (click)=dialogSelect()>Select</label>
+                </div>
+            </div>
+        </mat-toolbar>
+    </mat-dialog-actions>
+</div>
