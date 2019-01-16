@@ -19,8 +19,11 @@ export class PlatFormsComponent implements OnInit {
 
   public platformsList: any[];
   selectedPosition;
-  public form: FormGroup;
+  // public form: FormGroup;
   isShowToolTip:boolean = true;
+
+  isButtonLabelCondition = false;
+  selectedPlatform;
 
   toolTipIcon: string = "assets/Icon-Info-Inactive@1x.png";
 
@@ -34,10 +37,12 @@ export class PlatFormsComponent implements OnInit {
 
     localStorage.clear();
 
-    this.form = this.formBuilder.group({
+    this.selectedPlatform = "--";
 
-      platform: [null, [Validators.required]],
-    });
+    // this.form = this.formBuilder.group({
+
+    //   platform: [null, [Validators.required]],
+    // });
 
     this.opIdInput.nativeElement.focus();
 
@@ -62,10 +67,10 @@ export class PlatFormsComponent implements OnInit {
         errorMessage = 'The server encountered an error. Please try again later';
       } else if(errorCode == '401') {
 
-        errorMessage = 'You’re not authorized to access the resource that you requested';
+        errorMessage = 'Youâ€™re not authorized to access the resource that you requested';
       } else if(errorCode == '404') {
 
-        errorMessage = 'The resource you’re looking for was not found';
+        errorMessage = 'The resource youâ€™re looking for was not found';
       } else if(errorCode == '500') {
 
         errorMessage = 'The server encountered an error. Please try again later';
@@ -105,6 +110,34 @@ export class PlatFormsComponent implements OnInit {
 
   //   this.toolTipIcon = "assets/Icon-Info-Inactive@1x.png";
   // }
+
+  selectPlatform() {
+
+    const dialogRef = this.dialog.open(SelectPlatformDialog, {
+
+      panelClass: 'dialogBorderRadius',
+      width: '80%',
+      // height: '200px',
+      data: this.platformsList
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+  
+      var isFromDialog = localStorage.getItem('isPlatformDialogFrom');
+
+      if( isFromDialog === 'select'){
+        
+        this.selectedPosition = localStorage.getItem('DialogSelectedPlatfrom');
+        console.log('dialogRef afterClosed selectedPosition',this.selectedPosition);
+
+        this.selectedPlatform = this.platformsList[this.selectedPosition].name;
+        console.log('this.platformsList[this.selectedPosition].name',this.platformsList[this.selectedPosition].name);
+        this.isButtonLabelCondition = true;
+      } else {
+
+      }
+    });
+  }
 
   focusFunction() {
 
@@ -165,4 +198,109 @@ export class PlatformHttpErrorDialog {
 export interface DialogData {
 
   errorMessage: string;
+}
+
+@Component({
+
+  selector: 'select_platform_dialog',
+  templateUrl: 'selectPlatformDialog.html',
+})
+
+export class SelectPlatformDialog {
+
+  platformSelectedIcon: string;
+  dummyPlatformArray: any[] = [];
+  isChecked = true;
+  selectedIndexArray;
+  platformsList: any[] = [];
+  dialogModel: DialogModel; 
+
+  constructor(public dialogRef: MatDialogRef<SelectPlatformDialog>, @Inject(MAT_DIALOG_DATA) public mPlatformsList: SelectPlatformDialogData) {
+
+    localStorage.setItem('isPlatformDialogFrom','cancel');
+    console.log("Dialog platformsList: ", mPlatformsList);
+
+    this.platformsList = JSON.parse(JSON.stringify(mPlatformsList));
+
+    this.platformSelectedIcon = "assets/icon_checkmark@1x.png";
+
+    for(var i = 0; i < this.platformsList.length; i++) {
+
+      this.dialogModel = new DialogModel();
+      this.dialogModel.id = this.platformsList[i].id;
+      this.dialogModel.name = this.platformsList[i].name;
+      this.dialogModel.facets_count = this.platformsList[i].facets_count;
+      this.dialogModel.isSelected = false;
+
+      this.dummyPlatformArray.push(this.dialogModel);
+    }
+
+    console.log("this.dummyPlatformArray: ",this.dummyPlatformArray);
+  }
+
+  getSelecetedPlatform(selectedPlatfromPosition) {
+
+    console.log("getSelecetedPlatform",selectedPlatfromPosition);
+
+    this.selectedIndexArray = selectedPlatfromPosition;
+    localStorage.setItem('DialogSelectedPlatfrom',selectedPlatfromPosition);
+    
+    this.dummyPlatformArray = [];
+            
+    for(var i = 0; i < this.platformsList.length; i++) {
+
+      this.dialogModel = new DialogModel();
+      this.dialogModel.id = this.platformsList[i].id;
+      this.dialogModel.name = this.platformsList[i].name;
+      this.dialogModel.facets_count = this.platformsList[i].facets_count;
+      if(selectedPlatfromPosition == i) {
+
+        this.dialogModel.isSelected = true;
+      } else {
+
+        this.dialogModel.isSelected = false;
+      }
+      this.dummyPlatformArray.push(this.dialogModel);
+    }
+  }
+
+  dialogCancel() {
+    
+    localStorage.setItem('isPlatformDialogFrom','cancel');
+    this.dialogRef.close();
+
+  }
+
+  dialogSelect() {
+
+    var isPlatformSelected = false;
+
+    for(var i = 0; i < this.dummyPlatformArray.length; i++) {
+      if(this.dummyPlatformArray[i].isSelected == true) {
+
+        isPlatformSelected = true;
+      }
+    }
+    
+    if(isPlatformSelected) {
+
+      localStorage.setItem('isPlatformDialogFrom','select');
+      this.dialogRef.close();
+    } else {
+      
+    }
+  }
+}
+
+export class DialogModel {
+
+  id;
+  name;
+  facets_count;
+  isSelected: boolean;
+}
+
+export interface SelectPlatformDialogData {
+
+  mPlatformsList: any[];
 }

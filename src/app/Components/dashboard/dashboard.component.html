@@ -1,4 +1,29 @@
-<div class="container-fluid">
+<!-- mobile view -->
+<header>
+    <mat-toolbar  style="background: #65A7C4;padding: 0px;height: 60px;">
+        <div class="row" style="display: contents;">
+            <div class="col" style="text-align: center;">   
+                <div class="backButton" (click)="backButton()" [hidden]="showBackButton">
+                    <img style="float: left;margin-top: 5.5px;margin-left: 10px;margin-right: 10px;" src="assets/icon_back@1x.png" width="11px" height="20px" />
+                    <span style="font-size:16px;float: left;color: white">Back</span>
+                </div>    
+            </div>
+
+            <div class="col" style="text-align: center;margin-top: -4px;">
+                <img  src="assets/Logo_AppliedMaterials.png" width="96px" height="25px" />
+            </div>
+
+            <div class="col">
+                <img style="float:right;margin-right: 12px;" src="assets/Icon_Exit@1x.png" width="27px" height="22px" />
+            </div>
+        </div>
+    </mat-toolbar>
+</header>
+
+<router-outlet> </router-outlet>
+
+  <!-- web View -->
+<!-- <div class="container-fluid">
     <div class="page-header">
         <div class="container" style="margin-top:30px">
             <div class="row">
@@ -24,4 +49,4 @@
     </div>
     
     <router-outlet> </router-outlet>
-</div>
+</div> -->

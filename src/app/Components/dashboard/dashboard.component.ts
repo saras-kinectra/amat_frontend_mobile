@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatAutocomplete, MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   
@@ -12,10 +13,17 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 export class DashboardComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) {
+  showBackButton: boolean = false;
+
+  constructor(public dialog: MatDialog, private location: Location) {
   }
 
   ngOnInit() {
+  }
+
+  backButton() {
+
+    this.location.back();
   }
 
   showExitDialog() {

@@ -5,10 +5,24 @@
 
 .card {
 
-    top: 100px;
+    top: -100px;
     height: 100%;
     width: 100%;
     margin-bottom: 10%;
+}
+
+.dialogBorderRadius .mat-dialog-container {
+
+    background: #FFFFFF;
+    border-radius: 14px;
+    margin-top: 60px;
+}
+
+.rndEnabledialogBorderRadius .mat-dialog-container {
+
+    background: #FFFFFF;
+    border-radius: 14px;
+    margin-top: 60px;
 }
 
 /* .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
@@ -59,9 +73,10 @@
 
 .mat-form-field.mat-focused .mat-form-field-ripple {
 
-    background-color: #4599C3;
+    display: none;
+    /* background-color: #4599C3; */
 }
-  
+
 .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
 
     color: black;
@@ -154,4 +169,9 @@ button.menuButton.mat-icon-button {
   
     margin-left: -12%;
     background-color: rgb(255, 255, 255);
+}
+
+.mat-list .mat-list-item .mat-list-item-content {
+    
+    width: 100%;
 }

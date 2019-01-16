@@ -32,6 +32,7 @@ import { ProductComponent, OPIDDialog, ProductHttpErrorDialog } from './Products
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
 
@@ -73,7 +74,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     TooltipModule,
     MatRippleModule,
     ReactiveFormsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatToolbarModule
   ],
 
   providers: [

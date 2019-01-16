@@ -212,8 +212,9 @@ export class ChamberComponent implements OnInit {
 
         const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
 
+          panelClass: 'rndEnabledialogBorderRadius',
           width: '350px',
-          height: '215px',
+          // height: '215px',
           data: { isEnable: this.isRnDChambersEnabled }
         });
 
@@ -421,10 +422,10 @@ export class ChamberComponent implements OnInit {
       errorMessage = 'The server encountered an error. Please try again later';
     } else if(errorCode == '401') {
 
-      errorMessage = 'You’re not authorized to access the resource that you requested';
+      errorMessage = 'Youâ€™re not authorized to access the resource that you requested';
     } else if(errorCode == '404') {
 
-      errorMessage = 'The resource you’re looking for was not found';
+      errorMessage = 'The resource youâ€™re looking for was not found';
     } else if(errorCode == '500') {
 
       errorMessage = 'The server encountered an error. Please try again later';

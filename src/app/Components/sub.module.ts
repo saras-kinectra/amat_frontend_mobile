@@ -22,7 +22,7 @@ import { SelectModule } from 'ng2-select';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import 'hammerjs';
-import { PlatFormsComponent, PlatformHttpErrorDialog } from './platforms/platforms.component';
+import { PlatFormsComponent, PlatformHttpErrorDialog, SelectPlatformDialog } from './platforms/platforms.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatMenuModule } from '@angular/material/menu';
@@ -31,6 +31,10 @@ import { TooltipModule } from 'primeng/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from '../Components/login/login.component';
 import { ChamberMainModule } from '../Components/Chambers/chamber.module';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,8 @@ import { ChamberMainModule } from '../Components/Chambers/chamber.module';
     PlatFormsComponent,
     LoginComponent,
     ExitDialog,
-    PlatformHttpErrorDialog
+    PlatformHttpErrorDialog,
+    SelectPlatformDialog
   ],
 
   imports: [
@@ -67,7 +72,11 @@ import { ChamberMainModule } from '../Components/Chambers/chamber.module';
     Ng2SearchPipeModule, 
     MatMenuModule,
     MatDialogModule,
-    ChamberMainModule
+    ChamberMainModule,
+    MatToolbarModule,
+    MatDividerModule,
+    MatListModule,
+    MatTabsModule
   ],
 
   providers: [
@@ -79,7 +88,8 @@ import { ChamberMainModule } from '../Components/Chambers/chamber.module';
   entryComponents: [
     
     ExitDialog,
-    PlatformHttpErrorDialog
+    PlatformHttpErrorDialog,
+    SelectPlatformDialog
   ],
 
   bootstrap: []
