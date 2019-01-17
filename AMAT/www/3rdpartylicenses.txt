@@ -402,6 +402,8 @@ MIT
 @angular/animations
 MIT
 
+@angular/material/divider
+
 typescript-string-operations
 MIT
 MIT License
@@ -436,8 +438,6 @@ MIT
 @angular/material/list
 
 @angular/material/core
-
-@angular/material/divider
 
 ng2-select
 MIT
@@ -525,8 +525,6 @@ MIT
 @angular/material/autocomplete
 
 @angular/material/tabs
-
-@angular/material/card
 
 core-js
 MIT

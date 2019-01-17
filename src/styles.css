@@ -18,7 +18,42 @@
     margin-top: 60px;
 }
 
-.rndEnabledialogBorderRadius .mat-dialog-container {
+.rndEnableDialogBorderRadius .mat-dialog-container {
+
+    background: #FFFFFF;
+    border-radius: 14px;
+    margin-top: 60px;
+}
+
+.exitDialogBorderRadius .mat-dialog-container {
+
+    background: #FFFFFF;
+    border-radius: 14px;
+    margin-top: 60px;
+}
+
+.platformHttpErrorDialogBorderRadius .mat-dialog-container {
+
+    background: #FFFFFF;
+    border-radius: 14px;
+    margin-top: 60px;
+}
+
+.chamberHttpErrorDialogBorderRadius .mat-dialog-container {
+
+    background: #FFFFFF;
+    border-radius: 14px;
+    margin-top: 60px;
+}
+
+.productHttpErrorDialogBorderRadius .mat-dialog-container {
+
+    background: #FFFFFF;
+    border-radius: 14px;
+    margin-top: 60px;
+}
+
+.productOPIDDialogBorderRadius .mat-dialog-container {
 
     background: #FFFFFF;
     border-radius: 14px;

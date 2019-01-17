@@ -67,10 +67,10 @@ export class PlatFormsComponent implements OnInit {
         errorMessage = 'The server encountered an error. Please try again later';
       } else if(errorCode == '401') {
 
-        errorMessage = 'Youâ€™re not authorized to access the resource that you requested';
+        errorMessage = 'You’re not authorized to access the resource that you requested';
       } else if(errorCode == '404') {
 
-        errorMessage = 'The resource youâ€™re looking for was not found';
+        errorMessage = 'The resource you’re looking for was not found';
       } else if(errorCode == '500') {
 
         errorMessage = 'The server encountered an error. Please try again later';
@@ -84,8 +84,9 @@ export class PlatFormsComponent implements OnInit {
 
       const dialogRef = this.dialog.open(PlatformHttpErrorDialog, {
 
+        panelClass: 'platformHttpErrorDialogBorderRadius',
         width: '460px',
-        height: 'auto',
+        // height: 'auto',
         data: {errorMessage: errorMessage}
       });
     
@@ -113,30 +114,55 @@ export class PlatFormsComponent implements OnInit {
 
   selectPlatform() {
 
-    const dialogRef = this.dialog.open(SelectPlatformDialog, {
+    if(this.platformsList.length > 0) {
 
-      panelClass: 'dialogBorderRadius',
-      width: '80%',
-      // height: '200px',
-      data: this.platformsList
-    });
+      const dialogRef = this.dialog.open(SelectPlatformDialog, {
+
+        panelClass: 'dialogBorderRadius',
+        width: '80%',
+        // height: '200px',
+        data: this.platformsList
+      });
+    
+      dialogRef.afterClosed().subscribe(result => {
+    
+        var isFromDialog = localStorage.getItem('isPlatformDialogFrom');
   
-    dialogRef.afterClosed().subscribe(result => {
+        if(isFromDialog === 'select') {
+          
+          this.selectedPosition = localStorage.getItem('DialogSelectedPlatfrom');
+          console.log('dialogRef afterClosed selectedPosition',this.selectedPosition);
   
-      var isFromDialog = localStorage.getItem('isPlatformDialogFrom');
+          this.selectedPlatform = this.platformsList[this.selectedPosition].name;
+          console.log('this.platformsList[this.selectedPosition].name',this.platformsList[this.selectedPosition].name);
+          this.isButtonLabelCondition = true;
+  
+          localStorage.setItem("BackButtonVisibility", 'true');
+        } else {
+  
+          // localStorage.setItem("BackButtonVisibility", 'false');
+        }
+      });
+    } else {
 
-      if( isFromDialog === 'select'){
-        
-        this.selectedPosition = localStorage.getItem('DialogSelectedPlatfrom');
-        console.log('dialogRef afterClosed selectedPosition',this.selectedPosition);
+    }
+  }
 
-        this.selectedPlatform = this.platformsList[this.selectedPosition].name;
-        console.log('this.platformsList[this.selectedPosition].name',this.platformsList[this.selectedPosition].name);
-        this.isButtonLabelCondition = true;
+  opIdValuechange(event) {
+   
+    if(event.target.value == "") {
+
+      if(this.isButtonLabelCondition) {
+
+        localStorage.setItem("BackButtonVisibility", 'true');
       } else {
 
+        localStorage.setItem("BackButtonVisibility", 'false');
       }
-    });
+    } else {
+
+      localStorage.setItem("BackButtonVisibility", 'true');
+    }
   }
 
   focusFunction() {

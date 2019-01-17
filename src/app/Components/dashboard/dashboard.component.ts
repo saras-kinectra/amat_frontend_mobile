@@ -19,6 +19,19 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.showBackButton = true;
+  }
+
+  ngDoCheck() {
+
+    if(localStorage.getItem('BackButtonVisibility') == 'true') {
+
+      this.showBackButton = false;
+    } else {
+
+      this.showBackButton = true;
+    }
   }
 
   backButton() {
@@ -32,8 +45,9 @@ export class DashboardComponent implements OnInit {
 
     const dialogRef = this.dialog.open(ExitDialog, {
 
+      panelClass: 'exitDialogBorderRadius',
       width: '350px',
-      height: '170px',
+      // height: '170px',
     });
 
     dialogRef.afterClosed().subscribe(result => {

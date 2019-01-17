@@ -1,13 +1,31 @@
-<div class="">
+<div style="background-color: rgb(255, 255, 255)">
 
-  <h6 style="font-size:16px; font-weight: bold;" mat-dialog-title>Exit?</h6>
-
-  <div>
-    <p style="font-size:14px; margin-top:-16px">Are you sure you want to exit? <br>All progress will be lost.</p>
+  <div style="background:rgb(255, 255, 255);text-align: center;margin-top: -24px;margin-bottom: -24px;">
+    <h2 style="text-align: center;padding-top:10px;padding-bottom:10px;font-size:14px; font-weight: bold;color: rgb(0, 0, 0);" mat-dialog-title>Exit?</h2>
   </div>
+  
+  <mat-dialog-content style="font-size: 13px;color: #000000;text-align: center;padding-bottom: 8%;">
+      Are you sure you want to exit? <br>All progress will be lost.
+  </mat-dialog-content>
+  
+  <mat-divider style="margin-left: -24px;margin-right: -24px;background: #D8D8D8"></mat-divider>
+  
+  <mat-dialog-actions>
+    <mat-toolbar  style="background: rgb(255, 255, 255);padding: 0px;height: 36px;">
+      <div class="row" style="display: contents;">
+        <div class="col" style="text-align: center;">
+          <label style="font-size: 14px;cursor: pointer; color: #008FCE;margin-top: 8.5px;" (click)=dialogCancel()>Cancel</label>
+        </div>
 
-  <div mat-dialog-actions class="row col-xs-12" style="float: right; margin-right: 1.5%;">      
-    <label style="font-size:14px;cursor: pointer; color: black" (click)=dialogCancel()>CANCEL</label>
-    <label style="margin-left:15px; color:#328afb;cursor: pointer; font-size: 15px;" (click)=dialogExit()>EXIT</label>
-  </div>
+        <div class="col-1" style="background:rgb(255, 255, 255);text-align: -webkit-center;">
+          <div style="background: #D8D8D8; width: 1px; height: 52px">     
+          </div>
+        </div>
+
+        <div class="col" style="text-align: center;">
+          <label style="color: #008FCE;cursor: pointer; font-size: 14px;margin-top: 8.5px;font-weight: bold;" (click)=dialogExit()>Exit</label>
+        </div>
+      </div>
+    </mat-toolbar>
+  </mat-dialog-actions> 
 </div>

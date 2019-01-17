@@ -66,6 +66,8 @@ export class ChamberComponent implements OnInit {
 
   ngOnInit() {
 
+    localStorage.setItem("BackButtonVisibility", 'true');
+
     this.form = this.fb.group({
 
       chamberInputForm: [null, [Validators.required ]],
@@ -212,7 +214,7 @@ export class ChamberComponent implements OnInit {
 
         const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
 
-          panelClass: 'rndEnabledialogBorderRadius',
+          panelClass: 'rndEnableDialogBorderRadius',
           width: '350px',
           // height: '215px',
           data: { isEnable: this.isRnDChambersEnabled }
@@ -422,10 +424,10 @@ export class ChamberComponent implements OnInit {
       errorMessage = 'The server encountered an error. Please try again later';
     } else if(errorCode == '401') {
 
-      errorMessage = 'Youâ€™re not authorized to access the resource that you requested';
+      errorMessage = 'You’re not authorized to access the resource that you requested';
     } else if(errorCode == '404') {
 
-      errorMessage = 'The resource youâ€™re looking for was not found';
+      errorMessage = 'The resource you’re looking for was not found';
     } else if(errorCode == '500') {
 
       errorMessage = 'The server encountered an error. Please try again later';
@@ -439,8 +441,9 @@ export class ChamberComponent implements OnInit {
 
     const dialogRef = this.dialog.open(ChamberHttpErrorDialog, {
 
+      panelClass: 'chamberHttpErrorDialogBorderRadius',
       width: '460px',
-      height: 'auto',
+      // height: 'auto',
       data: {errorMessage: errorMessage}
     });
   

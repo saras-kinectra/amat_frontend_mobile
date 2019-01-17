@@ -66,6 +66,8 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
 
+    localStorage.setItem("BackButtonVisibility", 'true');
+
     this.apiService.findProductsForChambers(this.selectedPlatform.id, this.selectedChamberIDs).subscribe(response => {
 
       console.log("Response - findProductsForChambers: ", response);
@@ -311,8 +313,9 @@ export class ProductComponent implements OnInit {
 
     const dialogRef = this.dialog.open(ProductHttpErrorDialog, {
 
+      panelClass: 'productHttpErrorDialogBorderRadius',
       width: '460px',
-      height: 'auto',
+      // height: 'auto',
       data: {errorMessage: errorMessage}
     });
   
@@ -378,8 +381,9 @@ export class ProductComponent implements OnInit {
 
       const dialogRef = this.dialog.open(OPIDDialog, {
 
+        panelClass: 'productOPIDDialogBorderRadius',
         width: '350px',
-        height: '170px',
+        // height: '170px',
       });
 
       dialogRef.afterClosed().subscribe(result => {
