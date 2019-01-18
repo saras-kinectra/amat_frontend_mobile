@@ -88,14 +88,14 @@
 .mat-tab-label {
 
     background: #ffffff;
-    border: 3px solid #4599C3;
-    color: #4599C3;
+    border: 3px solid rgb(1, 96, 144);
+    color: rgb(1, 96, 144);
     height: 40px !important;
 }
 
 .mat-tab-label-active {
 
     color: #ffffff;
-    background-color: #4599C3;
+    background-color: rgb(1, 96, 144);
     height: 40px !important;
 }

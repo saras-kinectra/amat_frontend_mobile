@@ -1,10 +1,10 @@
 <div id="productScreencontent">
   <div style="padding-top: 10px" >
 
-    <mat-tab-group color="transparent" (selectedTabChange)="getSelectedTab($event)">
+    <mat-tab-group style="margin-top: 8px;" color="transparent" (selectedTabChange)="getSelectedTab($event)">
         <mat-tab [disabled]="showSVGImage" *ngFor="let product of finalProductsList; let i = index" [label]="product.product_code">
   
-          <mat-divider style="margin-top: 16px;"></mat-divider>
+          <mat-divider style="margin-top: 17px;"></mat-divider>
 
           <div class="col-md-12 titleNamesPadding">
             <span style="font-size: 14px;color: #008FCE;">Product ID</span>  

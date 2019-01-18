@@ -9,6 +9,9 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.kinectra.amat"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.kinectra.amat"
     }
   },
   "dependent_plugins": {}

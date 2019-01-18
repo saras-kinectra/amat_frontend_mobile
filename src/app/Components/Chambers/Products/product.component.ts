@@ -179,16 +179,16 @@ export class ProductComponent implements OnInit {
             
                 if(this.domIDsList[k].id === configurationArray2[i].facet_name + '-active') {
     
-                  this.domIDsList[k].children[0].children[0].style.fill = this.svgColorArray[j].productColor;
-                  this.domIDsList[k].children[0].children[1].style.fill = this.svgColorArray[j].productColor;
+                  // this.domIDsList[k].children[0].children[0].style.fill = this.svgColorArray[j].productColor;
+                  // this.domIDsList[k].children[0].children[1].style.fill = this.svgColorArray[j].productColor;
                 } else {
     
                 }
     
                 if(this.domIDsList[k].id === configurationArray2[i].facet_name + '-hover') {
     
-                  this.domIDsList[k].children[0].children[0].style.fill = this.svgColorArray[j].productColor;
-                  this.domIDsList[k].children[0].children[1].style.fill = this.svgColorArray[j].productColor;
+                  // this.domIDsList[k].children[0].children[0].style.fill = this.svgColorArray[j].productColor;
+                  // this.domIDsList[k].children[0].children[1].style.fill = this.svgColorArray[j].productColor;
                 } else {
     
                 }
