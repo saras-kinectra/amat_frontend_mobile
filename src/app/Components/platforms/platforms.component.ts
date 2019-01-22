@@ -36,6 +36,7 @@ export class PlatFormsComponent implements OnInit {
   ngOnInit() {
 
     localStorage.clear();
+    localStorage.setItem("CurrentScreen", "platform");
 
     this.selectedPlatform = "--";
 

@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  
+
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
 
   ngDoCheck() {
 
-    if(localStorage.getItem('BackButtonVisibility') == 'true') {
+    if (localStorage.getItem('BackButtonVisibility') == 'true') {
 
       this.showBackButton = false;
     } else {
@@ -36,7 +36,16 @@ export class DashboardComponent implements OnInit {
 
   backButton() {
 
-    this.location.back();
+    if (localStorage.getItem("CurrentScreen") == 'platform') {
+
+      this.location.path() == '';
+    } else if (localStorage.getItem("CurrentScreen") == 'chamber') {
+
+      this.location.back();
+    } else if (localStorage.getItem("CurrentScreen") == 'product') {
+
+      this.location.back();
+    }
   }
 
   showExitDialog() {
@@ -65,7 +74,7 @@ export class DashboardComponent implements OnInit {
 
 export class ExitDialog {
 
-  constructor(public dialogRef: MatDialogRef<ExitDialog>, private router: Router, private route: ActivatedRoute) { 
+  constructor(public dialogRef: MatDialogRef<ExitDialog>, private router: Router, private route: ActivatedRoute) {
 
   }
 

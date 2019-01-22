@@ -9,17 +9,17 @@ INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android
 INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-14:12
 INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-14:12
 	package
-		ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:102-129
+		ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:100-138
 		INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml
 		INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:74-101
+		ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:74-99
 		INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml
 		INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml
 	android:hardwareAccelerated
 		ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:11-45
 	xmlns:android
-		ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:130-188
+		ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:139-197
 	android:versionCode
 		ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:46-73
 		INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml
@@ -52,7 +52,7 @@ ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\ap
 		ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:5:18-52
 	android:icon
 		ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:5:53-80
-activity#com.kinectra.amat.MainActivity
+activity#com.digitaltaas.amatg3mapper.MainActivity
 ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:6:9-11:20
 	android:label
 		ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:6:97-134

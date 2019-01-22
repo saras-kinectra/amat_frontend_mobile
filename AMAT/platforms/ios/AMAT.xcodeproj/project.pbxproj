@@ -18,6 +18,7 @@
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
 		31BD8ED6479E4B30A766C2A9 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 92403A009ECB45739435BE3D /* CDVSplashScreen.m */; };
 		F30F76475F464013AEFEE80A /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = D74BBB18EA5543E98B215720 /* CDVViewController+SplashScreen.m */; };
+		DF877997B8884AE09B74F46E /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3385F4FF2881436A8EF9DB27 /* CDVStatusBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		D74BBB18EA5543E98B215720 /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		1D37A51B9BBC4721A7972E7D /* CDVSplashScreen.h */ = {isa = PBXFileReference; name = "CDVSplashScreen.h"; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		10D139A2343E43DAA4D3635C /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		3385F4FF2881436A8EF9DB27 /* CDVStatusBar.m */ = {isa = PBXFileReference; name = "CDVStatusBar.m"; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		E5EB4E8893954E7EAFAFA19D /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 				D74BBB18EA5543E98B215720 /* CDVViewController+SplashScreen.m */,
 				1D37A51B9BBC4721A7972E7D /* CDVSplashScreen.h */,
 				10D139A2343E43DAA4D3635C /* CDVViewController+SplashScreen.h */,
+				3385F4FF2881436A8EF9DB27 /* CDVStatusBar.m */,
+				E5EB4E8893954E7EAFAFA19D /* CDVStatusBar.h */,
 			);
 			name = Plugins;
 			path = "AMAT/Plugins";
@@ -283,6 +288,7 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				31BD8ED6479E4B30A766C2A9 /* CDVSplashScreen.m in Sources */,
 				F30F76475F464013AEFEE80A /* CDVViewController+SplashScreen.m in Sources */,
+				DF877997B8884AE09B74F46E /* CDVStatusBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

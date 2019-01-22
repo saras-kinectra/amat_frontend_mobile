@@ -67,6 +67,7 @@ export class ChamberComponent implements OnInit {
   ngOnInit() {
 
     localStorage.setItem("BackButtonVisibility", 'true');
+    localStorage.setItem("CurrentScreen", "chamber");
 
     this.form = this.fb.group({
 

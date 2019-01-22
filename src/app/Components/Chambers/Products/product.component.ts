@@ -67,6 +67,7 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
 
     localStorage.setItem("BackButtonVisibility", 'true');
+    localStorage.setItem("CurrentScreen", "product");
 
     this.apiService.findProductsForChambers(this.selectedPlatform.id, this.selectedChamberIDs).subscribe(response => {
 
