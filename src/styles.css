@@ -15,49 +15,48 @@
 
     background: #FFFFFF;
     border-radius: 14px;
-    margin-top: 60px;
 }
 
 .rndEnableDialogBorderRadius .mat-dialog-container {
 
     background: #FFFFFF;
     border-radius: 14px;
-    margin-top: 60px;
 }
 
 .exitDialogBorderRadius .mat-dialog-container {
 
     background: #FFFFFF;
     border-radius: 14px;
-    margin-top: 60px;
 }
 
 .platformHttpErrorDialogBorderRadius .mat-dialog-container {
 
     background: #FFFFFF;
     border-radius: 14px;
-    margin-top: 60px;
 }
 
 .chamberHttpErrorDialogBorderRadius .mat-dialog-container {
 
     background: #FFFFFF;
     border-radius: 14px;
-    margin-top: 60px;
 }
 
 .productHttpErrorDialogBorderRadius .mat-dialog-container {
 
     background: #FFFFFF;
     border-radius: 14px;
-    margin-top: 60px;
 }
 
 .productOPIDDialogBorderRadius .mat-dialog-container {
 
     background: #FFFFFF;
     border-radius: 14px;
-    margin-top: 60px;
+}
+
+.chmaberQtydialogBorderRadius .mat-dialog-container {
+
+    background: #FFFFFF;
+    border-radius: 14px;
 }
 
 /* .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {

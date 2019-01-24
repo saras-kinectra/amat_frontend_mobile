@@ -1,6 +1,6 @@
 <div id="content">
 
-  <div class="matContainer" style="padding:16px;">
+  <div class="matContainer" style="padding:16px; margin-bottom: -16px;">
 
     <div style="margin-bottom: -6px;">
       <label class="selectChambersName">Select Chambers</label>
@@ -11,9 +11,10 @@
       <mat-form-field class="chip-list  mat-form-field-custom ">
         <mat-chip-list #chipList>
           <mat-chip class="mat_chip" style="margin-bottom: 8px;" *ngFor="let chamber of selectedChambersList"
-            [selectable]="chamberSelectable" [removable]="removable" (removed)="chambersRemove(chamber)">
+            [selectable]="chamberSelectable" [removable]="removable" (removed)="chambersRemove(chamber)" (click)="updateChambersByID(chamber)">
             {{chamber.name}}
-            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            <!-- <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon> -->
+            <div class="chamberQtyCircle">{{chamber.qty}}</div>
           </mat-chip>
 
           <input class="inputField" style="padding-bottom: 6px;padding-top: 6px;" #chamberInput [formControl]="chamberFormControl"
@@ -34,8 +35,8 @@
       <hr style="margin-top: -21px;margin-right: -16px;margin-left: -16px;">
     </form>
 
-    <label [hidden]="showErrorLabelCondition" class="errorLabel">You've exceeded the maximum number of chambers by
-    <span style="font-weight: bold;">{{extraSelectedChamberCount}}.</span></label>
+    <label [hidden]="showErrorLabelCondition" class="errorLabel">You have reached the maximum amount of chambers.
+      <!-- <span style="font-weight: bold;">{{extraSelectedChamberCount}}.</span>--></label>
 
     <div class="matContainer comapatableChambersList">
 
@@ -51,7 +52,7 @@
     </div>
   </div>
 
-  <div class="matContainer" style="padding:16px;">
+  <div class="matContainer" style="padding:16px; margin-top: -16px;">
     <div [ngClass]="{'isRnDChambersTopMarginHigh' : isRnDChambersEnabled == true, 'isRnDChambersTopMarginLow' : isRnDChambersEnabled == false }">
       <p class="incompatableChambers" [hidden]="!showRnDChamberTitle">R&D Only Chambers</p>
 

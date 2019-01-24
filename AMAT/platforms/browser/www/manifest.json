@@ -1,11 +1,12 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "AMAT",
-  "short_name": "AMAT",
-  "version": "com.kinectra.amat",
+  "name": "AMAT G3 MAPPER",
+  "short_name": "AMAT G3 MAPPER",
+  "version": "com.digitaltaas.amatg3mapper",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "author": "Apache Cordova Team",
   "icons": [],
-  "start_url": "index.html"
+  "start_url": "index.html",
+  "theme_color": "#EC7063"
 }

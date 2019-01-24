@@ -1,9 +1,9 @@
 <header>
-    <mat-toolbar style="background: #65A7C4;padding: 0px;height: 60px;">
-        <div class="row" style="display: contents;">
+    <div style="background: #65A7C4;padding: 0px;height: 60px; padding-top: 17px; display: flex; padding-left: 10px;">
+        <div class="row" style="display: flex; width: 100%;">
             <div class="col" style="text-align: center;">
                 <div class="backButton" (click)="backButton()" [hidden]="showBackButton">
-                    <img style="float: left; margin-top: 5.5px; margin-right: 5px;" src="assets/icon_back@1x.png" width="11px" height="20px" />
+                    <img style="float: left; margin-top: 3px; margin-right: 5px;" src="assets/icon_back@1x.png" width="11px" height="20px" />
                     <span style="font-size:16px;float: left;color: white">Back</span>
                 </div>
             </div>
@@ -13,10 +13,10 @@
             </div>
 
             <div class="col">
-                <img style="float:right;margin-right: 2px;" src="assets/Icon_Exit@1x.png" width="27px" height="22px" (click)="showExitDialog();" />
+                <img style="float:right;margin-right: -17px;" src="assets/Icon_Exit@1x.png" width="27px" height="22px" (click)="showExitDialog();" />
             </div>
         </div>
-    </mat-toolbar>
+    </div>
 </header>
 
 <router-outlet> </router-outlet>

@@ -48,7 +48,10 @@ export class ProductComponent implements OnInit {
     // this.selectedChamberIDs = JSON.parse(localStorage.getItem('SelectedChambersList'));
     for (let i = 0; i < selectedChambersList.length; i++) {
 
-      this.selectedChamberIDs.push(selectedChambersList[i].id);
+      for(let j = 0; j < selectedChambersList[i].qty; j++) {
+
+        this.selectedChamberIDs.push(selectedChambersList[i].id);
+      }
     }
     console.log("Products_Onint_ChamberIDList", localStorage.getItem('SelectedChambersList'));
     console.log("Products_Onint_ChamberIDList", this.selectedChamberIDs);
@@ -59,8 +62,8 @@ export class ProductComponent implements OnInit {
     ];
 
     this.svgDummyColorCodes = [
-      {"ColorCode": "#EC7063"}, {"ColorCode": "#AF7AC5"}, {"ColorCode": "#58D68D"}, {"ColorCode": "#008080"}, {"ColorCode": "#F4D03F"},
-      {"ColorCode": "#99A3A4"}, {"ColorCode": "#5D6D7E"}, {"ColorCode": "#DC7633"}, {"ColorCode": "#A569BD"}
+      {"ColorCode": "#4B9DB7"}, {"ColorCode": "#546FA6"}, {"ColorCode": "#223884"}, {"ColorCode": "#00B5E2"}, {"ColorCode": "#99D6EA"},
+      {"ColorCode": "#007576"}, {"ColorCode": "#83C447"}, {"ColorCode": "#235723"}, {"ColorCode": "#2A8A60"}
     ];
   }
 
@@ -93,6 +96,8 @@ export class ProductComponent implements OnInit {
 
       this.imageURL = JSON.parse(JSON.stringify(this.selectedProduct.model_svg_url));
       console.log("getSelectedTab imageURL: ", this.imageURL);
+
+      // this.imageURL = "../../../../assets/endura3.svg";
       
       this.iconRegistry.addSvgIcon('productImageIcon', this.sanitizer.bypassSecurityTrustResourceUrl(this.imageURL));
 
@@ -112,6 +117,7 @@ export class ProductComponent implements OnInit {
     console.log("getSelectedTab configurationArray2: ", configurationArray2);
 
     this.svgColorArray = [];
+    let dummySVGColorArray = [];
     this.showSVGImage = true;
 
     setTimeout(()=> {
@@ -119,25 +125,20 @@ export class ProductComponent implements OnInit {
       this.domIDsList = document.querySelector('object').ownerDocument.documentElement.querySelectorAll('g');
       console.log("setTimeout querySelector domIDsList: ", this.domIDsList);
       
-      console.log("setTimeout querySelector domIDsList threeactive: ", this.domIDsList[4].id);
-      console.log("setTimeout configurationArray length: ", configurationArray2.length);
-
       for(var i = 0; i < configurationArray2.length; i++) {
-
-        console.log("setTimeout configurationArray chamber_name: ", configurationArray2[i].chamber_name);
 
         if(configurationArray2[i].chamber_name == '') {
 
           for(var j = 0; j < this.domIDsList.length; j++) {
             
-            if(this.domIDsList[j].id === configurationArray2[i].facet_name + '-active') {
+            if(this.domIDsList[j].id === configurationArray2[i].facet_name + '-ACTIVE') {
 
               this.domIDsList[j].style.visibility = 'hidden';
             } else {
 
             }
 
-            if(this.domIDsList[j].id === configurationArray2[i].facet_name + '-hover') {
+            if(this.domIDsList[j].id === configurationArray2[i].facet_name + '-HOVER') {
 
               this.domIDsList[j].style.visibility = 'hidden';
             } else {
@@ -149,27 +150,23 @@ export class ProductComponent implements OnInit {
           let colorModel = new ColorModel();
           colorModel.productName = configurationArray2[i].chamber_name;
           colorModel.productColor = this.svgDummyColorCodes[i].ColorCode;
-          this.svgColorArray.push(colorModel);
+          dummySVGColorArray.push(colorModel);
         }
       }
 
-      this.svgColorArray.forEach((item, index) => {
+      for(let i = 0; i < dummySVGColorArray.length; i++) {
 
-        if (index !== this.svgColorArray.findIndex(i => i.productName === item.productName)) {
+        this.checkDiplicateSVGColors(dummySVGColorArray[i]);
+      }
 
-          this.svgColorArray.splice(index, 1);
-        }
-      });
-
-      console.log("setTimeout configurationArray svgColorArray after length: ", this.svgColorArray);
+      console.log("setTimeout configurationArray svgColorArray after length dummySVGColorArray: ", dummySVGColorArray);
+      console.log("setTimeout configurationArray svgColorArray after length svgColorArray: ", this.svgColorArray);
 
       for(var i = 0; i < configurationArray2.length; i++) {
 
-        console.log("setTimeout configurationArray chamber_name: ", configurationArray2[i].chamber_name);
-
         if(configurationArray2[i].chamber_name == '') {
 
-
+          
         } else {
 
           for(var j = 0; j < this.svgColorArray.length; j++) {
@@ -178,18 +175,24 @@ export class ProductComponent implements OnInit {
             
               for(var k = 0; k < this.domIDsList.length; k++) {
             
-                if(this.domIDsList[k].id === configurationArray2[i].facet_name + '-active') {
+                if(this.domIDsList[k].id === configurationArray2[i].facet_name + '-ACTIVE') {
     
-                  // this.domIDsList[k].children[0].children[0].style.fill = this.svgColorArray[j].productColor;
-                  // this.domIDsList[k].children[0].children[1].style.fill = this.svgColorArray[j].productColor;
+                  this.domIDsList[k].children[0].style.fill = this.svgColorArray[j].productColor;
+                  this.domIDsList[k].children[1].style.fill = this.svgColorArray[j].productColor;
+
+                  if(configurationArray2[i].facet_name == '1') {
+
+                    this.domIDsList[k].children[2].children[1].style.fill = this.svgColorArray[j].productColor;
+                  }
                 } else {
-    
+
                 }
     
-                if(this.domIDsList[k].id === configurationArray2[i].facet_name + '-hover') {
+                if(this.domIDsList[k].id === configurationArray2[i].facet_name + '-HOVER') {
     
-                  // this.domIDsList[k].children[0].children[0].style.fill = this.svgColorArray[j].productColor;
-                  // this.domIDsList[k].children[0].children[1].style.fill = this.svgColorArray[j].productColor;
+                  this.domIDsList[k].children[0].style.fill = this.svgColorArray[j].productColor;
+                  this.domIDsList[k].children[1].style.fill = this.svgColorArray[j].productColor;
+                  this.domIDsList[k].children[2].children[1].style.fill = this.svgColorArray[j].productColor;
                 } else {
     
                 }
@@ -201,6 +204,19 @@ export class ProductComponent implements OnInit {
 
       this.showSVGImage = false;
     }, 1000);
+  }
+
+  checkDiplicateSVGColors(svgColorItem) {
+
+    for (let i = 0; i < this.svgColorArray.length; i++) {
+
+      if(this.svgColorArray[i].productName === svgColorItem.productName) {
+
+          return;
+      }
+    }
+
+    this.svgColorArray.push(svgColorItem);
   }
 
   getSelectedTab(tabPosition) {
@@ -224,15 +240,11 @@ export class ProductComponent implements OnInit {
 
   productItemMouseOver(configuration, isMouseOver) {
   
-    console.log("productItemMouseOver configuration", configuration);
-    console.log("productItemMouseOver isMouseOver", isMouseOver);
-
     this.domIDsList = document.querySelector('object').ownerDocument.documentElement.querySelectorAll('g');
-    console.log("productItemMouseOver querySelector domIDsList: ", this.domIDsList);
 
     for(var i = 0; i < this.domIDsList.length; i++) {
             
-      if(this.domIDsList[i].id === configuration.facet_name + '-active') {
+      if(this.domIDsList[i].id === configuration.facet_name + '-ACTIVE') {
 
         if(configuration.chamber_name == '') {
 
@@ -240,7 +252,13 @@ export class ProductComponent implements OnInit {
 
             this.domIDsList[i].style.visibility = 'visible';
 
-            this.domIDsList[i].children[0].children[0].style.fill = '#c7e2ef';
+            this.domIDsList[i].children[0].style.fill = '#c7e2ef';
+            this.domIDsList[i].children[1].style.fill = '#c7e2ef';
+
+            if(configuration.facet_name == '1') {
+
+              this.domIDsList[i].children[2].children[1].style.fill = "#c7e2ef";
+            }
           } else {
 
             this.domIDsList[i].style.visibility = 'hidden';
@@ -249,17 +267,17 @@ export class ProductComponent implements OnInit {
 
           if(isMouseOver) {
 
-            this.domIDsList[i].style.visibility = 'hidden';
+            this.domIDsList[i].children[0].style.visibility = 'hidden';
           } else {
 
-            this.domIDsList[i].style.visibility = 'visible';
+            this.domIDsList[i].children[0].style.visibility = 'visible';
           }
         }
       } else {
 
       }
 
-      if(this.domIDsList[i].id === configuration.facet_name + '-hover') {
+      if(this.domIDsList[i].id === configuration.facet_name + '-HOVER') {
 
         if(configuration.chamber_name == '') {
 
@@ -267,9 +285,8 @@ export class ProductComponent implements OnInit {
 
             this.domIDsList[i].style.visibility ='visible';
             
-            this.domIDsList[i].children[0].children[0].style.fill = '#c7e2ef';
-            this.domIDsList[i].children[0].children[1].style.fill = '#c7e2ef';
-            console.log("this.domIDsList[i].children[0].children[1]", this.domIDsList[i].children[0].children[1]);
+            this.domIDsList[i].children[0].style.fill = '#c7e2ef';
+            this.domIDsList[i].children[1].style.fill = '#c7e2ef';
           } else {
 
             this.domIDsList[i].style.visibility = 'hidden';
@@ -345,9 +362,6 @@ export class ProductComponent implements OnInit {
   }
 
   getSVGItemColor(chamberName) {
-
-    console.log("getSVGItemColor chamberName: ", chamberName);
-    console.log("getSVGItemColor svgColorArray: ", this.svgColorArray);
 
     for(var i = 0; i < this.svgColorArray.length; i++) {
 

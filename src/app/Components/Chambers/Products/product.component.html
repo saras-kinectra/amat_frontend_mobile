@@ -47,18 +47,18 @@
   
             <div style="position: relative" height="70%">
               <div>
-                <mat-nav-list class="matNavListPadding">
+                <mat-list class="matNavListPadding">
                 <mat-list-item  *ngFor="let configuration of configurationArray; let i=index" (mouseover)="productItemMouseOver(configuration, true)" (mouseleave)="productItemMouseOver(configuration, false)">
                     <div class="indexPosition">
                       {{configuration.facet_name}}
                     </div>
 
-                    <div style="color: rgb(0, 0, 0);font-size: 14px">
+                    <div style="font-size: 14px" [ngStyle]="{'color':getSVGItemColor(configuration.chamber_name)}">
                       {{configuration.chamber_name}}
                     </div>
                     <mat-divider style="margin-left: 16px;"></mat-divider>
                   </mat-list-item>
-                </mat-nav-list>
+                </mat-list>
               <mat-divider ></mat-divider>
             </div>
           </div>
