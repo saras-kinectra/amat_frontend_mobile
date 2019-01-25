@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.digitaltaas.amatg3mapper" version="2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.digitaltaas.amatg3mapper" version="4.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
@@ -27,6 +27,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <script src="cordova.js" type="text/javascript" />
     <allow-intent href="market:*" />
     <icon density="ldpi" src="res/icon/android/ldpi.png" />
     <icon density="mdpi" src="res/icon/android/mdpi.png" />
@@ -37,8 +38,7 @@
     <preference name="loglevel" value="DEBUG" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="2000" />
-    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#4599C3" />
     <preference name="StatusBarStyle" value="lightcontent" />
-    <preference name="StatusBarDefaultScrollToTop" value="false" />
 </widget>

@@ -1,27 +1,24 @@
 {
-  "_from": "cordova-plugin-statusbar@2.4.2",
-  "_id": "cordova-plugin-statusbar@2.4.2",
+  "_from": "git+https://github.com/apache/cordova-plugin-statusbar.git",
+  "_id": "cordova-plugin-statusbar@2.4.3-dev",
   "_inBundle": false,
-  "_integrity": "sha1-/B+9wNjXAzp+jh8ff/FnrJvU+vY=",
+  "_integrity": "",
   "_location": "/cordova-plugin-statusbar",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "cordova-plugin-statusbar@2.4.2",
-    "name": "cordova-plugin-statusbar",
-    "escapedName": "cordova-plugin-statusbar",
-    "rawSpec": "2.4.2",
-    "saveSpec": null,
-    "fetchSpec": "2.4.2"
+    "type": "git",
+    "raw": "https://github.com/apache/cordova-plugin-statusbar.git",
+    "rawSpec": "https://github.com/apache/cordova-plugin-statusbar.git",
+    "saveSpec": "git+https://github.com/apache/cordova-plugin-statusbar.git",
+    "fetchSpec": "https://github.com/apache/cordova-plugin-statusbar.git",
+    "gitCommittish": null
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-statusbar/-/cordova-plugin-statusbar-2.4.2.tgz",
-  "_shasum": "fc1fbdc0d8d7033a7e8e1f1f7ff167ac9bd4faf6",
-  "_spec": "cordova-plugin-statusbar@2.4.2",
+  "_resolved": "git+https://github.com/apache/cordova-plugin-statusbar.git#adcee9f66f01f95eaa286f956105bbccf62b14df",
+  "_spec": "https://github.com/apache/cordova-plugin-statusbar.git",
   "_where": "G:\\Angular\\Backup\\06-12-2018\\Mobile\\Applied\\AMAT",
   "author": {
     "name": "Apache Software Foundation"
@@ -77,5 +74,5 @@
     "test": "npm run jshint"
   },
   "types": "./types/index.d.ts",
-  "version": "2.4.2"
+  "version": "2.4.3-dev"
 }

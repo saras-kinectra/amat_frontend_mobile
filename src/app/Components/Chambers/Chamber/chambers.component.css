@@ -112,13 +112,10 @@ hr {
 
 .errorLabel {
 
-    position: absolute;
-    display: table-caption;
-    margin-bottom: 0px;
-    margin-left: 0px;
     margin-top: -14px;
     font-size: 14px;
     color: #1096D1;
+    display: flex;
 }
 
 .matIcon {
@@ -128,7 +125,7 @@ hr {
 
 .comapatableChambersList {
 
-    margin-top: 15px;
+    /* margin-top: 15px; */
 }
 
 .mat-input-element {

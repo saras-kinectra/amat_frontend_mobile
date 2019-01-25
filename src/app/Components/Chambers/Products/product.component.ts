@@ -98,6 +98,8 @@ export class ProductComponent implements OnInit {
       console.log("getSelectedTab imageURL: ", this.imageURL);
 
       // this.imageURL = "../../../../assets/endura3.svg";
+      // this.imageURL = "../../../../assets/SingleProducer2.svg";
+      // this.imageURL = "../../../../assets/Charger2.svg";
       
       this.iconRegistry.addSvgIcon('productImageIcon', this.sanitizer.bypassSecurityTrustResourceUrl(this.imageURL));
 
@@ -124,7 +126,10 @@ export class ProductComponent implements OnInit {
 
       this.domIDsList = document.querySelector('object').ownerDocument.documentElement.querySelectorAll('g');
       console.log("setTimeout querySelector domIDsList: ", this.domIDsList);
-      
+
+      // let docClassesList = document.querySelector('object').ownerDocument.documentElement.querySelectorAll('#svg st4');
+      // console.log("setTimeout querySelector docClassesList: ", docClassesList);
+
       for(var i = 0; i < configurationArray2.length; i++) {
 
         if(configurationArray2[i].chamber_name == '') {
@@ -182,7 +187,13 @@ export class ProductComponent implements OnInit {
 
                   if(configurationArray2[i].facet_name == '1') {
 
-                    this.domIDsList[k].children[2].children[1].style.fill = this.svgColorArray[j].productColor;
+                    if(this.domIDsList[k].children[2]) {
+
+                      if(this.domIDsList[k].children[2].children[1]) {
+
+                        this.domIDsList[k].children[2].children[1].style.fill = this.svgColorArray[j].productColor;
+                      }
+                    }
                   }
                 } else {
 
@@ -192,7 +203,13 @@ export class ProductComponent implements OnInit {
     
                   this.domIDsList[k].children[0].style.fill = this.svgColorArray[j].productColor;
                   this.domIDsList[k].children[1].style.fill = this.svgColorArray[j].productColor;
-                  this.domIDsList[k].children[2].children[1].style.fill = this.svgColorArray[j].productColor;
+                  if(this.domIDsList[k].children[2]) {
+
+                    if(this.domIDsList[k].children[2].children[1]) {
+
+                      this.domIDsList[k].children[2].children[1].style.fill = this.svgColorArray[j].productColor;
+                    }
+                  }
                 } else {
     
                 }

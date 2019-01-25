@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.digitaltaas.amatg3mapper" version="2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.digitaltaas.amatg3mapper" version="4.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>AMAT G3 MAPPER</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -15,10 +15,10 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <script src="cordova.js" type="text/javascript" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="2000" />
-    <preference name="StatusBarOverlaysWebView" value="true" />
-    <preference name="StatusBarBackgroundColor" value="#EC7063" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#4599C3" />
     <preference name="StatusBarStyle" value="lightcontent" />
-    <preference name="StatusBarDefaultScrollToTop" value="false" />
 </widget>

@@ -14,7 +14,7 @@
       "PACKAGE_NAME": "com.kinectra.amat"
     },
     "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.kinectra.amat"
+      "PACKAGE_NAME": "com.digitaltaas.amatg3mapper"
     }
   },
   "dependent_plugins": {}
