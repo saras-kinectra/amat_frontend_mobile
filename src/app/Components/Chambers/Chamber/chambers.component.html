@@ -41,13 +41,13 @@
     <div class="matContainer comapatableChambersList">
 
       <p class="chamberNames" [hidden]="!showChambersList" *ngFor="let chambers of chambersList; let i = index" [class.active]="selectedIndex === i" (click)="filterChambersByID(chambers)">
-        <a style="padding:5px">{{ chambers.name }} ({{chamber.got_code}})</a>
+        <a style="padding:5px">{{ chambers.name }} ({{chambers.got_code}})</a>
       </p>
 
       <p class="matchingChambersLabel" [hidden]="!showCompatibilityChambersTitle">Known Matching Chambers</p>
 
       <p class="chamberNames" [hidden]="!showCompatibilityChambersList" *ngFor="let chambers of compatibilityChambersList; let i = index" [class.active]="selectedIndex === i" (click)="filterChambersByID(chambers)">
-        <a style="padding:5px">{{ chambers.name }} ({{chamber.got_code}})</a>
+        <a style="padding:5px">{{ chambers.name }} ({{chambers.got_code}})</a>
       </p>
     </div>
   </div>
@@ -57,14 +57,14 @@
       <p class="incompatableChambers" [hidden]="!showRnDChamberTitle">R&D Only Chambers</p>
 
       <p class="inCompatableChamberNames" [hidden]="!showRnDChamberList" *ngFor="let chambers of rndOnlyChambersList; let i = index" [class.active]="selectedIndex === i" (click)="filterRnDChambersByID(chambers)">
-        <a style="padding:5px">{{ chambers.name }} ({{chamber.got_code}})</a>
+        <a style="padding:5px">{{ chambers.name }} ({{chambers.got_code}})</a>
       </p>
     </div>
   </div>
 
   <div class="matContainerproductsList matContainer">
     <p class="chamberNames" *ngFor="let chambers of finalProductsList">
-      <a style="padding:5px">{{ chambers.name }} ({{chamber.got_code}})</a>
+      <a style="padding:5px">{{ chambers.name }} ({{chambers.got_code}})</a>
     </p>
   </div>
 </div>
