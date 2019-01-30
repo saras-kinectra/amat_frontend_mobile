@@ -100,6 +100,24 @@ export class ChamberComponent implements OnInit {
         
         this.chambersList = JSON.parse(JSON.stringify(response));
         // this.dropDownChambersList = this.chambersList;
+
+        if(this.chambersList.length > 0) {
+
+        } else {
+
+          const dialogRef = this.dialog.open(ChamberHttpErrorDialog, {
+
+            panelClass: 'chamberHttpErrorDialogBorderRadius',
+            width: '460px',
+            // height: 'auto',
+            data: {errorMessage: "No chambers found!"}
+          });
+        
+          dialogRef.afterClosed().subscribe(result => {
+        
+            console.log('showPlatialog dialogRef.afterClosed isFrom');
+          });
+        }
       }, error => {
         
         this.showHttpErrorDailog(error);
@@ -266,7 +284,19 @@ export class ChamberComponent implements OnInit {
       this.showSelectedChambersClearButton = false;
     }
 
-    if (this.selectedChambersList.length > this.selectedPlatform.facets_count) {
+    var selectedChamberIDs: any = [];
+    for (let i = 0; i < this.selectedChambersList.length; i++) {
+
+      for(let j = 0; j < this.selectedChambersList[i].qty; j++) {
+
+        selectedChamberIDs.push(this.selectedChambersList[i].id);
+      }
+    }
+
+    console.log("filterRnDChambers Selected Ids", selectedChamberIDs);
+    console.log("filterRnDChambers SelectedChambersList:", this.selectedChambersList);
+
+    if (selectedChamberIDs.length > this.selectedPlatform.facets_count) {
 
       this.showErrorLabelCondition = false;
       this.showSelectChamberTitle = false;
@@ -283,7 +313,7 @@ export class ChamberComponent implements OnInit {
       // this.isButtonLabelCondition = true;
       this.formFiledUnderLine = true;
 
-      if(this.selectedChambersList.length >= this.selectedPlatform.min_facetgroups_count) {
+      if(selectedChamberIDs.length >= this.selectedPlatform.min_facetgroups_count) {
 
         this.isButtonLabelCondition = true;
       } else {
@@ -291,18 +321,6 @@ export class ChamberComponent implements OnInit {
         this.isButtonLabelCondition = false;
       }
     }
-
-    var selectedChamberIDs: any = [];
-    for (let i = 0; i < this.selectedChambersList.length; i++) {
-
-      for(let j = 0; j < this.selectedChambersList[i].qty; j++) {
-
-        selectedChamberIDs.push(this.selectedChambersList[i].id);
-      }
-    }
-
-    console.log("filterRnDChambers Selected Ids", selectedChamberIDs);
-    console.log("filterRnDChambers SelectedChambersList:", this.selectedChambersList);
 
     this.isCalledServiceAPI = true;
 
