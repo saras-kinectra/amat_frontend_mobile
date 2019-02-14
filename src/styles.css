@@ -2,6 +2,8 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '~@angular/cdk/overlay-prebuilt.css';
+@import '~font-awesome/css/font-awesome.min.css';
+/* @import '~material-design-icons/iconfont/material-icons.css'; */
 
 .card {
 
@@ -58,6 +60,16 @@
     background: #FFFFFF;
     border-radius: 14px;
 }
+
+.disable-text {
+
+    -webkit-user-select: none; 
+    -khtml-user-select: none;
+    -webkit-touch-callout: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;    
+} 
 
 /* .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
     background-color: rgb(194, 230, 245);

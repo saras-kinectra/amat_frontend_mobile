@@ -4,19 +4,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { String, StringBuilder } from 'typescript-string-operations';
 
 import { environment } from '../../environments/environment';
-import { EnvService } from '../env.service';
 
 @Injectable()
 export class ApiService {
    
-    // public static BASE_URL: string = "ec2-18-209-103-144.compute-1.amazonaws.com:3000/";
-    /* 13-12-2018*/
-    // public static BASE_URL: string = "http://ec2-18-209-103-144.compute-1.amazonaws.com:3000/";
-    /* 14-12-2018*/
-    //public static BASE_URL: string = "http://ec2-34-229-95-172.compute-1.amazonaws.com/amatg3mapper/api/";   
-
-    //'Authorization': 'Basic OWFlMGYzMmY2NjRkNWYxOGFiMjExZmE2NTlkYzIzNjc6ODZlNmVjYzA3NWNiNmZhYjc0NDE4NjhjZDhmZTllMmM='
-
 
     public httpHeaders = new HttpHeaders({
 
@@ -39,13 +30,7 @@ export class ApiService {
     public ADD_OPPORTUNITIES: string = environment.apiUrl + "Opportunities";
 
 
-    constructor(private httpClient: HttpClient, private storageService: StorageService, private env : EnvService) { 
-
-        // this.GET_PLATFORMS = this.env.apiUrl + "Platforms";
-        // this.GET_CHAMBERS_BY_PLATFORM_ID = this.env.apiUrl + "Platforms/{0}/Chambers";
-        // this.FIND_PRODUCTS_FOR_CHAMBERS = this.env.apiUrl + "Chambers/FindProductsForChambers";
-        // this.FIND_COMPATABILITY_INFO_FOR_CHAMBERS = this.env.apiUrl + "Chambers/FindCompatibilityInfoForChambers";
-        // this.ADD_OPPORTUNITIES = this.env.apiUrl + "Opportunities";
+    constructor(private httpClient: HttpClient, private storageService: StorageService) { 
 
     }
 

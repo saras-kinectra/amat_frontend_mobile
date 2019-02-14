@@ -11,8 +11,6 @@ import { SubRoutingModule} from './Components/sub-routing.module';
 import { SelectModule } from 'ng2-select';
 import { MatChipsModule } from '@angular/material/chips';
 
-import { EnvServiceProvider } from './env.service.provider';
-
 @NgModule({
 
   declarations: [
@@ -34,7 +32,7 @@ import { EnvServiceProvider } from './env.service.provider';
   ],
 
   providers: [
-    EnvServiceProvider
+    
   ],
   
   bootstrap: [

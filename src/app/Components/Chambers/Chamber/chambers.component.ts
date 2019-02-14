@@ -98,19 +98,20 @@ export class ChamberComponent implements OnInit {
 
         console.log("ngOnInit getChambersByPlatformID response: ", response);
         
-        this.chambersList = JSON.parse(JSON.stringify(response));
-        // this.dropDownChambersList = this.chambersList;
+      
+        if(JSON.parse(JSON.stringify(response)).length > 0) {
 
-        if(this.chambersList.length > 0) {
+          this.chambersList = JSON.parse(JSON.stringify(response));
+          this.dropDownChambersList = this.chambersList;
 
         } else {
 
-          const dialogRef = this.dialog.open(ChamberHttpErrorDialog, {
+          const dialogRef = this.dialog.open(EmptyChamberErrorDialog, {
 
             panelClass: 'chamberHttpErrorDialogBorderRadius',
             width: '460px',
             // height: 'auto',
-            data: {errorMessage: "No chambers found!"}
+            data: {chamberEmptyerrorMessage: "No chambers found!"}
           });
         
           dialogRef.afterClosed().subscribe(result => {
@@ -801,10 +802,35 @@ export class ChamberQuantityDialog implements OnInit {
   }
 }
 
+
+@Component({
+
+  selector: 'empty-chamber-Error-Dialog',
+  templateUrl: 'emptyChamberErrorDialog.html',
+})
+
+export class EmptyChamberErrorDialog {
+
+  constructor(public dialogRef: MatDialogRef<EmptyChamberErrorDialog>, 
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,private location:Location) { 
+  }
+
+  dialogOK() {
+    
+    console.log("Dialog Exit");
+    this.dialogRef.close();
+    // this.location.back();
+    // localStorage.clear();
+    // this.router.navigate(['/dashboard']);
+  }
+}
+
+
 export interface DialogData {
 
   chamber;
   wantToUpdate;
+  chamberEmptyerrorMessage;
 }
 
 export class ChamberModel {
