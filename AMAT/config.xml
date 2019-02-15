@@ -70,6 +70,7 @@
     <plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
     <plugin name="cordova-plugin-statusbar" spec="https://github.com/apache/cordova-plugin-statusbar.git" />
     <script src="cordova.js" type="text/javascript" />
+    <plugin name="cordova-plugin-network-information" spec="^2.0.1" />
     <engine name="android" spec="^7.1.4" />
     <engine name="browser" spec="^5.0.4" />
     <engine name="ios" spec="^4.5.5" />

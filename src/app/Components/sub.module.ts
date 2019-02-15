@@ -22,7 +22,7 @@ import { SelectModule } from 'ng2-select';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import 'hammerjs';
-import { PlatFormsComponent, PlatformHttpErrorDialog, SelectPlatformDialog } from './platforms/platforms.component';
+import { PlatFormsComponent, PlatformHttpErrorDialog, SelectPlatformDialog, PlatformNetworkDialog } from './platforms/platforms.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatMenuModule } from '@angular/material/menu';
@@ -44,7 +44,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     LoginComponent,
     ExitDialog,
     PlatformHttpErrorDialog,
-    SelectPlatformDialog
+    SelectPlatformDialog,
+    PlatformNetworkDialog
   ],
 
   imports: [
@@ -89,7 +90,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     
     ExitDialog,
     PlatformHttpErrorDialog,
-    SelectPlatformDialog
+    SelectPlatformDialog,
+    PlatformNetworkDialog
   ],
 
   bootstrap: []

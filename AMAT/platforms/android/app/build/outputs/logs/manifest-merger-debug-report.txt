@@ -1,13 +1,13 @@
 -- Merging decision tree log ---
 manifest
-ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-14:12
-INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-14:12
-INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-14:12
-INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-14:12
+ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-15:12
 MERGED from [:CordovaLib] G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:1-27:12
-INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-14:12
-INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-14:12
-INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-14:12
+INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-15:12
+INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:1-15:12
 	package
 		ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:2:100-138
 		INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml
@@ -90,3 +90,7 @@ INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android
 		ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:13:15-41
 		INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml
 		INJECTED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from G:\Angular\Backup\06-12-2018\Mobile\Applied\AMAT\platforms\android\app\src\main\AndroidManifest.xml:14:22-76

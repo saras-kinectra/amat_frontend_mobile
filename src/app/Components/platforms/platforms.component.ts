@@ -7,6 +7,10 @@ import { StorageService } from './../../Services/storage.service';
 import { ApiService } from './../../Services/api.service';
 import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 
+declare var navigator; 
+declare var connection;
+declare var Connection;
+
 @Component({
 
   selector: 'app-platforms',
@@ -47,60 +51,108 @@ export class PlatFormsComponent implements OnInit {
 
     this.opIdInput.nativeElement.focus();
 
-    this.apiService.getPlatforms().subscribe(response => {
+    // document.addEventListener("online", this.onOnlineCallBack.bind(this), false);
+    // document.addEventListener("offline", this.onOfflineCallBack.bind(this), false);
 
-      console.log("Response - getPlatforms: ", response);
+    if(navigator.connection.type == 'none') {
 
-      this.platformsList = JSON.parse(JSON.stringify(response));
-
-      console.log("Response - getPlatforms: json: ", this.platformsList);
-    }, error => {
-      
-      console.log("error response", error);
-      console.log("error status: ", error.status);
-      console.log("error message: ", error.message);
-      
-      var errorCode = error.status;
-      var errorMessage: string = '';
-
-      if(errorCode == '0') {
-
-        errorMessage = 'The server encountered an error. Please try again later';
-      } else if(errorCode == '401') {
-
-        errorMessage = 'You’re not authorized to access the resource that you requested';
-      } else if(errorCode == '404') {
-
-        errorMessage = 'The resource you’re looking for was not found';
-      } else if(errorCode == '500') {
-
-        errorMessage = 'The server encountered an error. Please try again later';
-      } else {
-
-        errorMessage = 'Something went wrong and we couldn\'t process your request';
-      }
-
-      console.log("error status after if: ", error.status);
-      console.log("error message after if: ", error.message);
-
-      const dialogRef = this.dialog.open(PlatformHttpErrorDialog, {
+      const dialogRef = this.dialog.open(PlatformNetworkDialog, {
 
         panelClass: 'platformHttpErrorDialogBorderRadius',
         width: '460px',
         // height: 'auto',
-        data: {errorMessage: errorMessage}
       });
     
       dialogRef.afterClosed().subscribe(result => {
     
-        console.log('showPlatialog dialogRef.afterClosed isFrom');
+        console.log('PlatformNetworkDialog dialogRef.afterClosed');
       });
-    });
+    } else {
+
+      this.apiService.getPlatforms().subscribe(response => {
+
+        console.log("Response - getPlatforms: ", response);
+  
+        this.platformsList = JSON.parse(JSON.stringify(response));
+  
+        console.log("Response - getPlatforms: json: ", this.platformsList);
+      }, error => {
+        
+        console.log("error response", error);
+        console.log("error status: ", error.status);
+        console.log("error message: ", error.message);
+        
+        var errorCode = error.status;
+        var errorMessage: string = '';
+  
+        if(errorCode == '0') {
+  
+          errorMessage = 'The server encountered an error. Please try again later';
+        } else if(errorCode == '401') {
+  
+          errorMessage = 'You’re not authorized to access the resource that you requested';
+        } else if(errorCode == '404') {
+  
+          errorMessage = 'The resource you’re looking for was not found';
+        } else if(errorCode == '500') {
+  
+          errorMessage = 'The server encountered an error. Please try again later';
+        } else {
+  
+          errorMessage = 'Something went wrong and we couldn\'t process your request';
+        }
+  
+        console.log("error status after if: ", error.status);
+        console.log("error message after if: ", error.message);
+  
+        const dialogRef = this.dialog.open(PlatformHttpErrorDialog, {
+  
+          panelClass: 'platformHttpErrorDialogBorderRadius',
+          width: '460px',
+          // height: 'auto',
+          data: {errorMessage: errorMessage}
+        });
+      
+        dialogRef.afterClosed().subscribe(result => {
+      
+          console.log('showPlatialog dialogRef.afterClosed isFrom');
+        });
+      });
+    }
   }
 
   onPlatFormListChange(event, index) {
 
     console.log("onPlatFormListChange", event._id, index);
+  }
+
+  // onOnlineCallBack() {
+    
+  //   this.getPlatforms();
+  // }
+
+  // onOfflineCallBack() {
+    
+  //   // alert('onOfflineCallBack');
+
+  //   // this.platformsList = [];
+  //   this.platformsList.length = 0;
+
+  //   const dialogRef = this.dialog.open(PlatformNetworkDialog, {
+
+  //     panelClass: 'platformHttpErrorDialogBorderRadius',
+  //     width: '460px',
+  //     // height: 'auto',
+  //   });
+  
+  //   dialogRef.afterClosed().subscribe(result => {
+  
+  //     console.log('PlatformNetworkDialog dialogRef.afterClosed');
+  //   });
+  // }
+
+  getPlatforms() {
+
   }
 
   // onToolTipMouseOver(): void {
@@ -330,4 +382,25 @@ export class DialogModel {
 export interface SelectPlatformDialogData {
 
   mPlatformsList: any[];
+}
+
+@Component({
+
+  selector: 'platform-Network-dialog',
+  templateUrl: 'patformNetworkDialog.html',
+})
+
+export class PlatformNetworkDialog {
+
+  constructor(public dialogRef: MatDialogRef<PlatformNetworkDialog>) { 
+  }
+
+  dialogOK() {
+    
+    console.log("Dialog Exit");
+    this.dialogRef.close();
+
+    // localStorage.clear();
+    // this.router.navigate(['/dashboard']);
+  }
 }
